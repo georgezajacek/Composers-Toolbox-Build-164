@@ -1,0 +1,34 @@
+.ct-distance-open { overflow: hidden; }
+.ct-distance-overlay { position: fixed; inset: 0; z-index: 1500; display: flex; justify-content: flex-end; background: #0009; padding: 14px; color: #f1efeb; font-family: system-ui,sans-serif; }
+.ct-distance-drawer { background: #151617; border: 1px solid #555; border-radius: 18px; width: min(720px,100%); height: 100%; overflow: auto; padding: clamp(20px,4vw,42px); box-shadow: 0 10px 70px #0009; }
+.ct-distance-overlay.expanded { justify-content: center; align-items: center; padding: 3vh 3vw; }
+.ct-distance-overlay.expanded .ct-distance-drawer { width: min(1180px,100%); }
+.ct-distance-drawer header { display: flex; align-items: start; justify-content: space-between; gap: 20px; }
+.ct-distance-drawer h2 { font-size: clamp(28px,4vw,40px); line-height: 1.15; margin: 6px 0 20px; }
+.ct-distance-drawer p { line-height: 1.65; font-size: 16px; margin: 10px 0 20px; }
+.ct-distance-drawer header p { margin: 0; text-transform: uppercase; letter-spacing: .08em; color: #bcb9b2; font-size: 12px; }
+.ct-distance-drawer button,.ct-distance-drawer input,.ct-distance-drawer select { color: #f1efeb; background: #252628; border: 1px solid #727272; border-radius: 8px; font: inherit; min-height: 44px; padding: 10px 13px; }
+.ct-distance-drawer button { cursor: pointer; }
+.ct-distance-drawer button:disabled { opacity: .45; cursor: default; }
+.ct-distance-drawer :is(button,input,select,summary):focus-visible { outline: 3px solid #ffce7a; outline-offset: 3px; }
+.ct-distance-drawer header>div:last-child { display: flex; gap: 6px; }
+.ct-distance-source { color: #c4c1ba; border-left: 2px solid #eaae65; padding-left: 14px; }
+.ct-distance-drawer form { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; margin: 30px 0; }
+.ct-distance-drawer label { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #cbc7bf; }
+.ct-distance-drawer label :is(input,select) { width: 100%; min-width: 0; }
+.ct-distance-drawer .ct-distance-fold { grid-column: 1/-1; flex-direction: row; align-items: center; }
+.ct-distance-drawer .ct-distance-fold input { width: 20px; min-height: 20px; }
+.ct-distance-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.ct-distance-actions [data-distance-play] { background: #ecd9bd; color: #171716; border-color: #ecd9bd; }
+.ct-distance-pitches { display: grid; grid-template-columns: repeat(auto-fit,minmax(140px,1fr)); gap: 12px; margin: 24px 0; }
+.ct-distance-pitches>div { border: 1px solid #595a5b; border-radius: 12px; padding: 18px; min-height: 108px; display: flex; flex-direction: column; gap: 12px; }
+.ct-distance-pitches strong { font-size: 21px; line-height: 1.4; overflow-wrap: anywhere; }
+.ct-distance-pitches .ct-distance-ratio { font-size: 34px; line-height: 1.2; }
+.ct-distance-pitches>div>span { font-size: 15px; color: #c4c1ba; }
+.ct-distance-open .cross-circle-drawer { visibility: hidden; }
+.ct-distance-pitches small { color: #aaa; }
+.ct-distance-pitches .sounding { border-color: #ffce7a; background: #453822; }
+.ct-distance-drawer details { border-top: 1px solid #555; padding: 24px 0; }
+.ct-distance-drawer summary { cursor: pointer; font-size: 18px; min-height: 44px; }
+.ct-distance-drawer [data-distance-status] { min-height: 28px; color: #ffce7a; }
+@media(max-width:520px) { .ct-distance-overlay { padding: 0; } .ct-distance-drawer { border-radius: 0; } .ct-distance-drawer header { flex-wrap: wrap; } .ct-distance-drawer form { gap: 14px; } }

@@ -1,0 +1,40 @@
+CURRENT REVISION — LOWER STARTING REGISTERS / RISING INVERSIONS
+
+PASS Threes Explore 3: every inversion sends the expected MIDI notes
+PASS Threes Explore 7: every inversion sends the expected MIDI notes
+PASS Threes Explore 9: every inversion sends the expected MIDI notes
+PASS Threes Explore 11: every inversion sends the expected MIDI notes
+PASS Threes Explore 13: every inversion sends the expected MIDI notes
+PASS Threes Generate 3: every inversion sends the expected MIDI notes
+PASS Threes Generate 7: every inversion sends the expected MIDI notes
+PASS Threes Generate 9: every inversion sends the expected MIDI notes
+PASS Threes Generate 11: every inversion sends the expected MIDI notes
+PASS Threes Generate 13: every inversion sends the expected MIDI notes
+PASS Threes arpeggio uses inverted bass
+PASS Threes Compose scale picker absent
+PASS Threes Compose inversion 0 updates chord
+PASS Threes Compose inversion 1 updates chord
+PASS Threes Compose inversion names the correct chord-tone bass
+PASS Threes Compose inversion 2 updates chord
+PASS Threes Compose inversion names the correct chord-tone bass
+PASS Infinity explore: every inversion sends the displayed/selected cents to audio
+PASS Infinity generate: every inversion sends the displayed/selected cents to audio
+PASS Infinity Compose: every inversion matches Build Harmony Play
+PASS Infinity raised root ratio matches 1200 cents
+PASS Infinity displayed inversion steps honor a non-octave equave
+PASS Matrix has no JavaScript runtime errors
+{"checks":23,"errors":[]}
+
+PASS Generated chord retains its rising register when auditioned from Pool
+PASS Lower notation screen and Score below button removed
+PASS Composition thirteenth starts one octave below the previous automatic register
+PASS Composition thirteenth inversions rise consistently and match the displayed pitches
+PASS Generate thirteenth starts one octave below the previous automatic register
+PASS Explore 9 starts one octave lower
+PASS Explore 11 starts one octave lower
+PASS Explore 13 starts one octave lower
+{"checks":8,"errors":[]}
+
+Browser tests capture actual scheduled MIDI pitches and compare them with the note displays. Successive inversions are checked for an ascending bass. Ninths, elevenths and thirteenths are checked against the previous starting register. The score-removal check verifies both the lower notation panel and its navigation button are absent.
+
+ON THE MAC: build the review app, audition all chord sizes/inversions, verify Pool/composition saving and reopening, and test sleep/wake while playing and stopped. These native and physical-audio checks remain pending.

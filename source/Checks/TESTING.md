@@ -1,0 +1,1 @@
+Operation regression checks require Node.js, Playwright, and a Chromium executable supplied as BROWSER_EXECUTABLE. Run `node Checks/operations.test.cjs`. The test server appends diagnostic access only to its in-memory response; those hooks are not in the application files.

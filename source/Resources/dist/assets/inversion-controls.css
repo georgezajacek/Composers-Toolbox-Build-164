@@ -1,0 +1,22 @@
+.ct-inversion-picker{display:inline-flex;align-items:center;justify-content:flex-start;gap:5px;max-width:100%;margin:3px 0;color:#f4f1ea;font:600 10px/1.25 system-ui,sans-serif;letter-spacing:0;flex-wrap:wrap}
+.ct-inversion-picker>span{font:inherit!important;color:inherit!important;white-space:nowrap}
+.ct-inversion-picker select{appearance:auto!important;width:auto!important;min-width:104px;max-width:100%;height:26px!important;min-height:26px!important;padding:2px 5px!important;border:1px solid #626872!important;border-radius:5px;background:#11151b!important;color:#fff!important;font:600 11px/1.2 system-ui,sans-serif!important;letter-spacing:0!important}
+.ct-inversion-picker select:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.ct-inversion-picker select:disabled{opacity:.45}
+.sculpt-chord-auditions{flex-wrap:wrap}
+.ct-voicing-selector:has(.ct-inversion-picker){display:flex;flex-wrap:wrap;gap:8px}
+
+/* Use the existing empty space beside the note stacks on the composition face. */
+#app .suite-stage-3 .ct-current-chord:has(>.ct-inversion-picker){position:relative}
+#app .suite-stage-3 .ct-current-chord>.ct-inversion-picker{position:absolute;right:8px;bottom:8px;margin:0;width:118px;display:flex;flex-direction:column;gap:3px;align-items:flex-start}
+
+
+.ct-chord-readout{display:flex;flex-direction:column;gap:2px;flex-basis:100%;width:100%;font:600 9px/1.35 system-ui,sans-serif;color:#eee;letter-spacing:0;overflow-wrap:anywhere;text-align:left;margin:3px 0}
+.ct-chord-readout span{font:inherit!important;letter-spacing:0!important;color:inherit!important}
+.ct-current-chord>.ct-chord-readout{max-width:calc(100% - 136px)}
+.ct-current-note-stack b small{font-size:9px;margin-left:2px}
+.composition-chord-transforms:has(>.ct-chord-readout){flex-wrap:wrap}
+#app .chords-column>.extent-bar:has(>.ct-chord-readout),
+#app .transform-chord-reveal-head:has(>.ct-chord-readout){flex-wrap:wrap!important}
+#app .ct-chord-readout{min-width:0;flex-shrink:0}
+#app .compose-working-harmony-footer>.ct-chord-readout{grid-column:1 / -1!important;width:100%!important;min-width:0!important}

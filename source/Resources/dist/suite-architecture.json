@@ -1,0 +1,22 @@
+{
+  "package": "Music Suite \u2014 Verified September 11",
+  "architecture": "single-origin-multi-page",
+  "iframes": false,
+  "external_app_redirects": false,
+  "style_delivery": "inline-css-per-route",
+  "routes": {
+    "toolbox": "./",
+    "threes": "./threes/",
+    "infinity": "./infinity/",
+    "time": "./time/"
+  },
+  "applied_snapshots": {
+    "infinity": "1789086671663",
+    "time": "1789098355308"
+  },
+  "circle_of_threes": {
+    "source_version": 24,
+    "source_commit": "57b8a3959a7ade6708a72fb3fddfa908197bd28d",
+    "source": "Corrected Circle of Threes approved September 11"
+  }
+}

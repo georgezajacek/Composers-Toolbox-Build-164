@@ -1,0 +1,21 @@
+COMPOSER'S TOOLBOX — BUILD 164 FIXED BUILD FOLDER
+
+1. Extract the ZIP.
+2. Open this folder in Finder.
+3. Double-click Build-and-Sign.command.
+
+No folder selection or manual file replacements are needed.
+The build checks run without displaying the instrument windows.
+The app is checked for quarantine attributes before distribution signing.
+A successful build reveals the new signed .pkg in Finder for Transporter.
+If the build stops, send build.log from its new Build-164 folder.
+
+This is the complete source project, not an already signed Apple package.
+Your Mac needs its existing Apple signing identities and developer tools.
+Native compilation, WebKit runtime verification, signing and Apple acceptance
+have not been tested in the environment that prepared this download.
+
+Only native verification and build packaging were repaired. Resources are
+byte-for-byte identical to the uploaded Review-4 folder. Prior build output,
+old apps, module caches and obsolete launcher scripts are omitted from this
+clean copy; they remain in your original folder.

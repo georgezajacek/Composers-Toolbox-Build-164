@@ -1,0 +1,26 @@
+{
+  "baseline": "Uploaded Composers-Toolbox-Mac-Only-Build-159 project",
+  "baseline_archive_sha256": "23265258d8c3aa3e0a13ab0e7e0e2db39855b8e60444c3114322487f2988163a",
+  "build": "164",
+  "version": "1.0",
+  "native_build_tested": false,
+  "apple_distribution_signed": false,
+  "submitted_to_apple": false,
+  "automated_operation_checks": 31,
+  "original_resource_count_matched": 60,
+  "revision": "Lower starting register for larger Threes chords; rising Generate/Composition inversions; lower notation screen removed",
+  "packaging_repair": {
+    "input_archive": "Composers-Toolbox-Build-163-Review-4.zip",
+    "input_archive_sha256": "e92a1b39891904c3651c3db81c30d1ee174116f274ad35a54a57cb75cb65b911",
+    "changes": [
+      "Hidden native verification window; explicit report-write failure; interrupted verification fails",
+      "Require verification report before signing",
+      "Remove and verify absence of quarantine on every assembled app entry before distribution signing"
+    ],
+    "resources_changed": false,
+    "native_build_tested": false,
+    "cleanup_revision": "Use /usr/bin/xattr subprocess commands; no Python extended-attribute API dependency",
+    "user_mac_evidence": "Screenshot shows arm64 and x86_64 compilation and BUILD_163_NATIVE_CHECK_PASS for first repaired build; signing and packaging stopped at Python os.listxattr",
+    "build_number_change": "163 to 164 because Apple rejected reuse of 163"
+  }
+}
