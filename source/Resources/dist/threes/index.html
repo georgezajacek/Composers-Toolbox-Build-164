@@ -1475,11 +1475,19 @@ html body #app:has(.suite-stage-1){
   height:auto!important;
   min-height:0!important;
 }
+#app .suite-stage-1 .circle-column{
+  display:grid!important;
+  grid-template-rows:auto minmax(0,1fr) auto!important;
+  height:100%!important;
+}
 #app .suite-stage-1 .circle-column > .circle{
-  max-height:min(42dvh,100%)!important;
-  width:auto!important;
+  max-height:100%!important;
+  max-width:100%!important;
+  width:min(100%,48dvh)!important;
   height:auto!important;
+  aspect-ratio:1/1!important;
   justify-self:center;
+  align-self:center;
 }
 @media(max-height:780px){
   #app .suite-stage-1 .mode-inventory > .mode-choice{
