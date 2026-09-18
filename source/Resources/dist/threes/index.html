@@ -1380,5 +1380,120 @@ window.ctPoolNotice=function(message){
 <style id="lower-motif-generated-alignment">
 #app .ct-generated-note-row{margin-top:9px!important}
 </style>
+<style id="ct-explore-mode-labels">
+/* Explore: show interval + W/H under each mode pitch, and keep the page on one screen. */
+html:has(#app .suite-stage-1),
+body:has(#app .suite-stage-1){
+  height:100%!important;
+  max-height:100dvh!important;
+  overflow:hidden!important;
+}
+body>#app:has(.suite-stage-1),
+html body #app:has(.suite-stage-1){
+  height:100%!important;
+  max-height:100dvh!important;
+  min-height:0!important;
+  overflow:hidden!important;
+}
+#app .suite-stage-1.rebuild-shell,
+#app .suite-stage-1 .explore-window,
+#app .suite-stage-1 .explore-window > .circle-column,
+#app .suite-stage-1 .explore-window > .chords-column,
+#app .suite-stage-1 .modes-stack,
+#app .suite-stage-1 .modes-stack > .modes-column,
+#app .suite-stage-1 .mode-inventory,
+#app .suite-stage-1 .educational-chords{
+  overflow:hidden!important;
+  min-height:0!important;
+  max-height:100%!important;
+}
+#app .suite-stage-1.rebuild-shell{
+  height:100%!important;
+  display:grid!important;
+  grid-template-rows:minmax(0,1fr)!important;
+}
+#app .suite-stage-1 .explore-window{
+  height:100%!important;
+  align-items:stretch!important;
+}
+#app .suite-stage-1 .modes-stack{
+  display:grid!important;
+  height:100%!important;
+  grid-template-rows:auto minmax(0,1fr) auto!important;
+}
+#app .suite-stage-1 .modes-stack > .modes-column{
+  display:grid!important;
+  height:100%!important;
+  grid-template-rows:auto minmax(0,1fr) auto!important;
+}
+#app .suite-stage-1 .mode-inventory{
+  display:grid!important;
+  height:100%!important;
+  grid-template-rows:repeat(7,minmax(0,1fr))!important;
+  align-content:stretch!important;
+}
+#app .suite-stage-1 .mode-inventory > .mode-choice{
+  height:auto!important;
+  min-height:0!important;
+  display:grid!important;
+  grid-template-rows:auto minmax(0,1fr)!important;
+  padding:1px 2px!important;
+}
+#app .suite-stage-1 .mode-choice .note-cell{
+  display:grid!important;
+  grid-template-rows:auto auto auto!important;
+  place-items:center!important;
+  align-content:center!important;
+  min-height:0!important;
+  padding:0!important;
+}
+#app .suite-stage-1 .mode-choice .note-cell :is(em,small){
+  display:block!important;
+  line-height:1!important;
+  font-style:normal!important;
+}
+#app .suite-stage-1 .mode-choice .note-cell b{
+  font-size:12px!important;
+  line-height:1.05!important;
+}
+#app .suite-stage-1 .mode-choice .note-cell em{
+  font-size:8px!important;
+  font-weight:850;
+  color:#eef1f4!important;
+}
+#app .suite-stage-1 .mode-choice .note-cell small{
+  font-size:7px!important;
+  font-weight:850;
+  color:#f8ecd3!important;
+}
+#app .suite-stage-1 .educational-chords{
+  display:grid!important;
+  height:100%!important;
+  grid-template-rows:repeat(7,minmax(0,1fr))!important;
+}
+#app .suite-stage-1 .educational-chords > .chord-audition{
+  height:auto!important;
+  min-height:0!important;
+}
+#app .suite-stage-1 .circle-column > .circle{
+  max-height:min(42dvh,100%)!important;
+  width:auto!important;
+  height:auto!important;
+  justify-self:center;
+}
+@media(max-height:780px){
+  #app .suite-stage-1 .mode-inventory > .mode-choice{
+    height:auto!important;
+    min-height:0!important;
+    grid-template-rows:auto minmax(0,1fr)!important;
+  }
+  #app .suite-stage-1 .mode-choice .note-cell{
+    min-height:0!important;
+  }
+  #app .suite-stage-1 .mode-inventory{
+    grid-template-rows:repeat(7,minmax(0,1fr))!important;
+  }
+}
+</style>
 </body>
 </html>
