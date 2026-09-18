@@ -5,6 +5,7 @@ function check(ok,label){assert.ok(ok,label);checks++;console.log('PASS',label)}
 try{
 const p=await b.newPage({viewport:{width:1440,height:1000}});p.on('pageerror',e=>errors.push(e.message));
 await p.goto('http://127.0.0.1:8878/threes/');await p.getByRole('button',{name:'SKIP',exact:true}).click();
+check(await p.locator('.ct-chord-readout').count()===0,'Threes Explore has no chord inversion readout');
 await p.evaluate(()=>{window.__played=[];for(const method of ['midiChordNow','pianoMidiNow']){const original=w[method];w[method]=function(m,...args){window.__played.push(...(Array.isArray(m)?m:[m]));return original.call(this,m,...args)}}});
 for(const stage of ['1','2']){
  if(stage==='2')await p.locator('[data-suite-stage="2"]').first().click();
@@ -23,10 +24,12 @@ for(const stage of ['1','2']){
    assert.deepEqual(actual,expected,'Threes stage '+stage+' extent '+extent+' inversion '+inv);
    const visible=await p.locator(sel).nth(1).evaluate((el,stage)=>stage==='1'?[...el.querySelectorAll('.chord-tone')].map(t=>Number(t.dataset.chordPc)):[...el.querySelectorAll('.chord-tone-stack>b')].map(t=>t.childNodes[t.childNodes.length-1].textContent.trim()),stage);
    if(stage==='1'){assert.deepEqual(visible,expected);const text=await p.locator(sel).nth(1).locator('.chord-tone').allTextContents();assert.deepEqual(text,await p.evaluate(pcs=>{const scale=_(h.get().reference);return pcs.map(pc=>scale.names[scale.pcs.indexOf(pc)])},expected),'Actual visible spelling after observers');}
-   const readout=await p.locator('.ct-chord-readout').first().evaluate(el=>({notes:JSON.parse(el.dataset.pitches),gaps:JSON.parse(el.dataset.gaps),text:el.innerText}));
-   assert.deepEqual(readout.notes,await p.evaluate(()=>window.__played),'Displayed register matches actual audio');
-   assert.deepEqual(readout.gaps,readout.notes.slice(1).map((n,j)=>n-readout.notes[j]));
-   assert.ok(readout.text.includes(readout.gaps.join(' · ')+' semitones'));
+   if(stage!=='1'){
+    const readout=await p.locator('.ct-chord-readout').first().evaluate(el=>({notes:JSON.parse(el.dataset.pitches),gaps:JSON.parse(el.dataset.gaps),text:el.innerText}));
+    assert.deepEqual(readout.notes,await p.evaluate(()=>window.__played),'Displayed register matches actual audio');
+    assert.deepEqual(readout.gaps,readout.notes.slice(1).map((n,j)=>n-readout.notes[j]));
+    assert.ok(readout.text.includes(readout.gaps.join(' · ')+' semitones'));
+   }
 
   }
   check(true,'Threes '+(stage==='1'?'Explore':'Generate')+' '+extent+': every inversion sends the expected MIDI notes');
