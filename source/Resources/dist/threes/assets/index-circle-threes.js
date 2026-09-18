@@ -890,7 +890,7 @@ function ctMountThreesInversions(){
    I(()=>w.playChordAudition(pcs,Te===1?h.get().reference.root:null));
   },'chord');
   const ordered=U(scale.pcs,scale.root),degree=Math.max(0,ordered.indexOf(state.selectedChord?.pcs?.[0]));
-  ctThreesReadout(host,ctThreesChordMidis(ee(scale,degree,Ne(state.chordExtent))));
+  if(Te!==1)ctThreesReadout(host,ctThreesChordMidis(ee(scale,degree,Ne(state.chordExtent))));
  }
  if(Te===1){
   chordsAt(document.querySelector('.chords-column > .extent-bar'));
